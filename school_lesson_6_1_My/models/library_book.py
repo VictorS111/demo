@@ -5,6 +5,7 @@ class LibraryBook(models.Model):
     _name = 'library.book'
     _description = 'Library Books'
 
+    # Test
     name = fields.Char(string='Title')
     reader_id = fields.Many2one(comodel_name='res.partner')
     taken_date = fields.Date('In use from', readonly=True)

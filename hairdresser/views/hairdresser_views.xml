@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!--    hairdresser booking view tree-->
+    <record id="hairdresser_booking_view_tree" model="ir.ui.view">
+        <field name="name">hairdresser_booking.view.tree</field>
+        <field name="model">hairdresser</field>
+        <field name="arch" type="xml">
+            <tree decoration-info="state == 'draft'">
+                <field name="name_hairdresser" optional="hide"/>
+                <field name="user_id"/>
+                <field name="service_ids" widget="many2many_tags" />
+                <field name="time" />
+                <field name="phone" />
+                <field name="email" />
+                <field name="state" />
+            </tree>
+        </field>
+    </record>
+
+    <!--    hairdresser booking view form-->
+    <record id="hairdresser_booking_view_form" model="ir.ui.view">
+        <field name="name">hairdresser_booking.view.form</field>
+        <field name="model">hairdresser</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="action_approve_booking" invisible="state != 'draft'" string="Approve" class="oe_highlight" type="object" />
+                    <button name="action_reject_booking" invisible="state != 'draft'" string="Reject" class="oe_highlight" type="object" />
+                    <field name="state" widget="statusbar" statusbar_visible="draft,approved,rejected" />
+                </header>
+                <sheet>
+                    <div>
+                        <h2>
+                            <field name="priority" widget="priority"/>
+                        </h2>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="name_hairdresser" />
+                            <field name="user_id"/>
+                            <field name="phone" />
+                            <field name="service_ids" widget="many2many_tags" />
+                        </group>
+                        <group>
+                            <field name="time" />
+                            <field name="email" />
+<!--                            <field name="chair_id" />-->
+<!--                            <field name="language_id" invisible="1" />-->
+<!--                            <field name="company_id" invisible="1" />-->
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Current Bookings">
+<!--                            <field name="filtered_order_ids" />-->
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!--    hairdresser booking view calendar-->
+    <record id="hairdresser_calendar" model="ir.ui.view">
+        <field name="name">hairdresser.calendar</field>
+        <field name="model">hairdresser</field>
+<!--        <field name="priority" eval="2"/>-->
+        <field name="arch" type="xml">
+            <calendar string="Se Calendar" create="0" mode="month" date_start="time"
+                      color="user_id" hide_time="true" event_limit="5">
+                <field name="user_id" />
+                <field name="state" />
+            </calendar>
+        </field>
+    </record>
+
+    <!--    hairdresser booking view pivot-->
+    <record id="hairdresser_pivot" model="ir.ui.view">
+        <field name="name">hairdresser.pivot</field>
+        <field name="model">hairdresser</field>
+        <field name="arch" type="xml">
+            <pivot string="Booking">
+                <field name="user_id" type="row"/>
+                <field name="time" type="col" interval="day"/>
+            </pivot>
+        </field>
+    </record>
+
+    <!--    hairdresser booking view graph-->
+    <record id="hairdresser_graph" model="ir.ui.view">
+        <field name="name">hairdresser.graph</field>
+        <field name="model">hairdresser</field>
+        <field name="arch" type="xml">
+            <graph string="Appointment Graph" type="pie">
+                <field name="user_id"/>
+                <field name="amount" type="measure"/>
+            </graph>
+        </field>
+    </record>
+
+    <!--    hairdresser booking action-->
+    <record id="hairdresser_booking_action" model="ir.actions.act_window">
+        <field name="name">Booking</field>
+        <field name="res_model">hairdresser</field>
+        <field name="view_mode">tree,form,calendar,pivot,graph</field>
+    </record>
+
+    <menuitem
+            id="menu_booking"
+            name="booking"
+            parent="menu_booking_master"
+            action="hairdresser_booking_action"
+            sequence="20"/>
+    <menuitem
+            id="menu_create_booking"
+            name="Create Booking"
+            parent="menu_booking_master"
+            action="action_create_booking"
+            sequence="20"/>
+</odoo>

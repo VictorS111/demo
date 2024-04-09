@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <!-- Customer demo data-->
+    <record id="customer_01" model="customer">
+        <field name="name">Maksym</field>
+        <field name="gender">male</field>
+        <field name="is_child">true</field>
+        <field name="phone">097-339-12-77</field>
+    </record>
+    <record id="customer_02" model="customer">
+        <field name="name">Galyna</field>
+        <field name="gender">female</field>
+        <field name="is_child">false</field>
+        <field name="phone">063-434-37-90</field>
+    </record>
+    <record id="customer_03" model="customer">
+        <field name="name">Oksana</field>
+        <field name="gender">female</field>
+        <field name="is_child">false</field>
+        <field name="phone">099-573-17-89</field>
+    </record>
+    <record id="customer_04" model="customer">
+        <field name="name">Vasyl'</field>
+        <field name="gender">male</field>
+        <field name="is_child">false</field>
+        <field name="phone">066-850-76-80</field>
+    </record>
+    <record id="customer_05" model="customer">
+        <field name="name">Oleg</field>
+        <field name="gender">male</field>
+        <field name="is_child">false</field>
+        <field name="phone">097-125-94-83</field>
+    </record>
+    <record id="customer_06" model="customer">
+        <field name="name">Mariya</field>
+        <field name="gender">female</field>
+        <field name="is_child">false</field>
+        <field name="phone">096-533-57-22</field>
+    </record>
+    <record id="customer_07" model="customer">
+        <field name="name">Andriy</field>
+        <field name="gender">male</field>
+        <field name="is_child">false</field>
+        <field name="phone">068-824-55-38</field>
+    </record>
+</odoo>

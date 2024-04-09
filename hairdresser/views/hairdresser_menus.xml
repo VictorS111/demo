@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem
+            id="hairdresser_menu_root"
+            name="Hairdresser"
+            web_icon="hairdresser,static/description/icon.png"
+            sequence="0"/>
+
+    <menuitem
+            id="menu_service_master"
+            name="Service"
+            parent="hairdresser_menu_root"
+            sequence="0"/>
+
+     <menuitem
+            id="menu_booking_master"
+            name="Booking"
+            parent="hairdresser_menu_root"
+            sequence="10"/>
+
+    <menuitem
+            id="menu_chair_master"
+            name="Chair"
+            parent="hairdresser_menu_root"
+            sequence="10"/>
+
+    <menuitem
+            id="menu_customer_master"
+            name="Customer"
+            parent="hairdresser_menu_root"
+            sequence="10"/>
+
+     <menuitem
+            id="menu_working_hours_master"
+            name="Working hours"
+            parent="hairdresser_menu_root"
+            sequence="20"/>
+</odoo>

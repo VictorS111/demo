@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data noupdate="1">
+        <!-- Hairdresser working_hours_xml hours demo data-->
+        <record id="hairdresser_working_01" model="working.hours">
+            <field name="name">Sunday</field>
+            <field name="from_time">10</field>
+            <field name="to_time">16</field>
+        </record>
+        <record id="hairdresser_working_02" model="working.hours">
+            <field name="name">Monday</field>
+            <field name="from_time">10</field>
+            <field name="to_time">19</field>
+        </record>
+        <record id="hairdresser_working_03" model="working.hours">
+            <field name="name">Tuesday</field>
+            <field name="from_time">10</field>
+            <field name="to_time">19</field>
+        </record>
+        <record id="hairdresser_working_04" model="working.hours">
+            <field name="name">Wednesday</field>
+            <field name="from_time">10</field>
+            <field name="to_time">19</field>
+        </record>
+        <record id="hairdresser_working_05" model="working.hours">
+            <field name="name">Thursday</field>
+            <field name="from_time">10</field>
+            <field name="to_time">19</field>
+        </record>
+        <record id="hairdresser_working_06" model="working.hours">
+            <field name="name">Friday</field>
+            <field name="from_time">10</field>
+            <field name="to_time">19</field>
+        </record>
+        <record id="hairdresser_working_07" model="working.hours">
+            <field name="name">Saturday</field>
+            <field name="from_time">10</field>
+            <field name="to_time">19</field>
+        </record>
+    </data>
+</odoo>

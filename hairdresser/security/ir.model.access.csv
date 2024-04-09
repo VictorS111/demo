@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access.hairdresser,access_hairdresser,hairdresser.model_hairdresser,base.group_user,1,1,1,1
+access.service,access_service,hairdresser.model_service,base.group_user,1,1,1,1
+access.working.hours,access_working_hours,hairdresser.model_working_hours,base.group_user,1,1,1,1
+access.chair,access_chair,hairdresser.model_chair,base.group_user,1,1,1,1
+access.customer,access_customer,hairdresser.model_customer,base.group_user,1,1,1,1
+access.create.booking.wizard,access_create_booking_wizard,hairdresser.model_create_booking_wizard,base.group_user,1,1,1,1

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Service demo data-->
+        <record id="hairdresser_service_01" model="service">
+            <field name="name">Men's haircut</field>
+            <field name="price">10</field>
+            <field name="time_taken">20</field>
+        </record>
+
+        <record id="hairdresser_service_02" model="service">
+            <field name="name">Beard haircut</field>
+            <field name="price">5</field>
+            <field name="time_taken">15</field>
+        </record>
+
+        <record id="hairdresser_service_03" model="service">
+            <field name="name">Women's haircut</field>
+            <field name="price">20</field>
+            <field name="time_taken">30</field>
+        </record>
+
+         <record id="hairdresser_service_04" model="service">
+            <field name="name">Children's haircut</field>
+            <field name="price">10</field>
+            <field name="time_taken">25</field>
+        </record>
+    </data>
+</odoo>

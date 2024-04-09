@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!--    Hairdresser working_hours_xml hours action-->
+    <record id="working_hours_action" model="ir.actions.act_window">
+        <field name="name">Working Hours</field>
+        <field name="res_model">working.hours</field>
+        <field name="view_mode">kanban,tree,form</field>
+    </record>
+    <!--    Hairdresser working_hours_xml hours view kanban-->
+    <record id="working_hours_view_kanban" model="ir.ui.view" >
+        <field name="name">working.hours.kanban</field>
+        <field name="model">working.hours</field>
+        <field name="arch" type="xml">
+            <kanban sample="1">
+<!--                <field name="id"/>-->
+                <field name="name"/>
+                <field name="from_time"/>
+                <field name="to_time"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div t-attf-class="oe_kanban_global_click">
+                            <div class="oe_kanban_details">
+                                <ul>
+                                    <li>
+                                        Day:
+                                        <field name="name"/>
+                                    </li>
+                                    <li>
+                                        Starting Time:
+                                        <field name="from_time"/>
+                                    </li>
+                                    <li>
+                                        Closing Time:
+                                        <field name="to_time"/>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+    <!--    Hairdresser working_hours_xml hours view form-->
+    <record id="working_hours_view_form" model="ir.ui.view">
+        <field name="name">working.view.form</field>
+        <field name="model">working.hours</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <h1>
+                        <field name="name"/>
+                    </h1>
+                    <group>
+                        <group>
+                            <field name="from_time" widget="float_time"/>
+                        </group>
+                        <group>
+                            <field name="to_time" widget="float_time"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <!--    Hairdresser working_hours_xml hours view tree-->
+    <record id="working_hours_view_tree" model="ir.ui.view">
+        <field name="name">working.view.tree</field>
+        <field name="model">working.hours</field>
+        <field name="arch" type="xml">
+            <tree editable="bottom">
+                <field name="name"/>
+                <field name="from_time" widget="float_time"/>
+                <field name="to_time" widget="float_time"/>
+            </tree>
+        </field>
+    </record>
+
+    <menuitem
+            id="menu_working_hours"
+            name="working_hours"
+            parent="menu_working_hours_master"
+            action="working_hours_action"
+            sequence="20"/>
+</odoo>

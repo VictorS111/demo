@@ -28,13 +28,6 @@ class CreateBookingWizard(models.TransientModel):
             'target': 'new',
         }
 
-    def print_report(self):
-        data = {
-            'model': 'create.booking.wizard',
-            'form': self.read()[0]
-        }
-        return (
-            self.env.ref('hairdresser.report_booking').with_context(landscape=True).report_action(self, data=data))
 
 
 

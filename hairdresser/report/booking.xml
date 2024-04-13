@@ -10,26 +10,35 @@
                         <table class="table table-condensed">
                             <thead>
                                 <tr>
-                                    <th style="text-align:left;"><strong>Name </strong></th>
-                                    <th style="text-align:left;"><strong>Services </strong></th>
-                                    <th style="text-align:left;"><strong>Date </strong></th>
-                                    <th style="text-align:left;"><strong>Status </strong></th>
+                                    <th style="text-align:left;">
+                                        <strong>Name</strong>
+                                    </th>
+                                    <th style="text-align:left;">
+                                        <strong>Services</strong>
+                                    </th>
+                                    <th style="text-align:left;">
+                                        <strong>Date</strong>
+                                    </th>
+                                    <th style="text-align:left;">
+                                        <strong>Status</strong>
+                                    </th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <t t-foreach="bookings" t-as="o">
+<!--                                <t t-foreach="bookings" t-as="o">-->
+                                    <t t-foreach="docs" t-as="o">
                                     <tr>
                                         <td style="text-align:left;">
-                                            <t t-esc="o['user_id']"/>
+                                            <t t-esc="o['user_id'].name"/>
                                         </td>
                                         <td style="text-align:left;">
-                                            <t t-esc="o['service_ids']"/>
+                                            <t t-esc="o['service_ids'].name"/>
                                         </td>
                                         <td style="text-align:left;">
-                                            <t t-esc="o['time']"/>
+                                            <t t-esc="o.time"/>
                                         </td>
-                                         <td style="text-align:left;">
-                                             <span t-field="o.state"/>
+                                        <td style="text-align:left;">
+                                            <span t-field="o.state"/>
                                         </td>
                                     </tr>
                                 </t>

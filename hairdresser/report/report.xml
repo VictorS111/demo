@@ -4,9 +4,9 @@
         <field name="name">Booking</field>
         <field name="model">hairdresser</field>
         <field name="report_type">qweb-pdf</field>
-        <field name="report_name">hairdresser.report_booking</field>
-        <field name="report_file">hairdresser.report_booking</field>
-        <field name="binding_model_id" ref="model_hairdresser"/>
+        <field name="report_name">hairdresser.booking_report</field>
+        <field name="report_file">hairdresser.booking_report</field>
+        <field name="binding_model_id" ref="hairdresser.model_hairdresser"/>
         <field name="binding_type">report</field>
     </record>
 </odoo>

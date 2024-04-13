@@ -2,12 +2,14 @@ from odoo import api, models, _
 
 
 class BookingReport(models.AbstractModel):
-    _name = 'report.hairdresser.report_hairdresser'
+    _name = 'report.hairdresser.booking_report'
     _description = 'Booking Report'
 
     @api.model
     def _get_report_values(self, docids, data=None):
+        print("yes entered here in the function")
         if data['form']['user_id']:
+            print("yes entered here in the function")
             bookings = self.env['hairdresser'].search([('user_id', '=', data['form']['user_id'][0])])
         else:
             bookings = self.env['hairdresser'].search([])
@@ -23,3 +25,5 @@ class BookingReport(models.AbstractModel):
             'doc_model': 'hairdresser',
             'bookings': bookings,
         }
+
+

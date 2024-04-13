@@ -37,3 +37,14 @@ class Hairdresser(models.Model):
     def action_reject_booking(self):
         for rec in self:
             rec.state = 'rejected'
+
+
+    def print_report(self):
+        print("vvvv---->", self.read()[0])
+        data = {
+            'model': 'hairdresser',
+            'form': self.read()[0]
+        }
+        print("Data", data)
+        return (
+            self.env.ref('hairdresser.report_booking').with_context(landscape=True).report_action(self, data=data))

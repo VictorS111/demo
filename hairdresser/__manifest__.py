@@ -15,7 +15,7 @@
     'sequence': -100,
     'website': 'https://github.com/VictorS111/demo',
     'depends': [
-        'base', 'mail'
+        'web', 'base', 'mail'
     ],
     'data': [
         'security/ir.model.access.csv',
@@ -26,8 +26,8 @@
         'views/working_hours_views.xml',
         'views/hairdresser_chair_views.xml',
         'views/customer_views.xml',
-        'report/report.xml',
         'report/booking.xml',
+        'report/report.xml',
         'data/customer_data.xml',
         # 'data/service_data.xml',
         # 'data/working_hours_data.xml',
